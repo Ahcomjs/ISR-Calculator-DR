@@ -1,5 +1,6 @@
-import type { CalculationResults } from "../types";
-import { formatCurrency } from "../utils/formatters";
+import React from 'react';
+import type { CalculationResults } from '../types';
+import DetailRow from './DetailRow';
 
 interface AnnualDetailsModalProps {
   results: CalculationResults;
@@ -12,7 +13,7 @@ const AnnualDetailsModal: React.FC<AnnualDetailsModalProps> = ({ results, isOpen
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg relative transform transition-all duration-300 scale-100 opacity-100">
+      <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 w-full max-w-lg relative transform transition-all duration-300 scale-100 opacity-100">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold rounded-full p-2"
@@ -20,28 +21,32 @@ const AnnualDetailsModal: React.FC<AnnualDetailsModalProps> = ({ results, isOpen
         >
           &times;
         </button>
-        <h3 className="text-3xl font-bold text-gray-800 mb-6 text-center">Detalles Anuales</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">Detalles Anuales</h3>
         <div className="grid grid-cols-1 gap-4 text-lg">
-          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-sm">
-            <span className="text-gray-600">Salario Bruto Anual:</span>
-            <span className="text-gray-900 font-semibold">{formatCurrency(results.grossSalaryAnnual)}</span>
-          </div>
-          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-sm">
-            <span className="text-gray-600">Aportes AFP Anual:</span>
-            <span className="text-red-600 font-semibold">{formatCurrency(results.afpAnnual)}</span>
-          </div>
-          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-sm">
-            <span className="text-gray-600">Aportes SFS Anual:</span>
-            <span className="text-red-600 font-semibold">{formatCurrency(results.sfsAnnual)}</span>
-          </div>
-          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-sm">
-            <span className="text-gray-600">Ingreso Neto Imponible Anual:</span>
-            <span className="text-gray-900 font-semibold">{formatCurrency(results.taxableIncomeAnnual)}</span>
-          </div>
-          <div className="flex justify-between items-center bg-gray-50 p-3 rounded-md shadow-md">
-            <span className="text-gray-600 font-medium">ISR Anual Calculado:</span>
-            <span className="text-red-600 font-bold">{formatCurrency(results.isrAnnual)}</span>
-          </div>
+          <DetailRow
+            label="Salario Bruto Anual"
+            value={results.grossSalaryAnnual}
+          />
+          <DetailRow
+            label="Aportes AFP Anual"
+            value={results.afpAnnual}
+            isNegative={true}
+          />
+          <DetailRow
+            label="Aportes SFS Anual"
+            value={results.sfsAnnual}
+            isNegative={true}
+          />
+          <DetailRow
+            label="Ingreso Neto Imponible Anual"
+            value={results.taxableIncomeAnnual}
+          />
+          <DetailRow
+            label="ISR Anual Calculado"
+            value={results.isrAnnual}
+            isNegative={true}
+            isBold={true}
+          />
         </div>
       </div>
     </div>

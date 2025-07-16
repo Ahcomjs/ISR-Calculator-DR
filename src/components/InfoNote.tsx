@@ -1,3 +1,5 @@
+import React from 'react';
+
 const InfoNote: React.FC = () => (
   <p className="text-center text-gray-700 text-sm mt-10 p-4 bg-yellow-50 rounded-lg border border-yellow-200 shadow-inner">
     <span className="font-bold text-yellow-800">Nota Importante:</span> Las tablas de ISR utilizadas corresponden al año 2024. Esta calculadora
