@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/110ea2fb-e6b3-4a4e-8a7f-f89ceaf3bd20" alt="ISR Calculator Logo" width="150">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">ISR Calculator DR</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  A simple and effective tool for calculating the Dominican Republic's income tax (ISR) based on current fiscal brackets.
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <a href="https://isrcalculatordr.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live_Demo-View_Here-blue?style=for-the-badge&logo=vercel" alt="Live Demo">
+  </a>
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Project Status">
+</p>
 
-## Expanding the ESLint configuration
+## 🌟 About the Project
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**ISR Calculator DR** is a web application designed to help users calculate the estimated income tax (ISR) they would need to pay in the Dominican Republic. It uses the official income brackets provided by the local tax authority and allows for quick and accurate estimates with a modern and responsive interface.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Key Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+* **User-Friendly Interface**: Simple and clean design for quick data input and results.
+* **Real-Time Calculation**: Tax values update instantly based on user input.
+* **Annual & Monthly Views**: View tax calculations based on yearly or monthly income.
+* **Brackets Awareness**: Visual breakdown of which portions of the income are taxed and at what rates.
+* **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices.
+* **Input Validation**: Ensures correct numeric input before calculating.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Technologies Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This project is built using modern frontend tools:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **React** – JavaScript library for building user interfaces.
+* **TypeScript** – A typed superset of JavaScript that enhances reliability and readability.
+* **Vite** – A fast and modern build tool for frontend development.
+* **Tailwind CSS** – Utility-first CSS framework for rapid and consistent UI styling.
+* **JavaScript (ES6+)** – For frontend logic and state handling.
+* **HTML5 & CSS3** – For semantic structure and base styling.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+* [Node.js](https://nodejs.org/) (which includes npm)
+
+### Installation Steps
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/isr-calculator-dr.git
+   cd isr-calculator-dr
